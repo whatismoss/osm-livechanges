@@ -612,9 +612,9 @@ formatter: function() {
             attribution: 'OpenStreetMap'
         });
         var omq = new L.TileLayer(
-            'http://otile2.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.png', {
+            'http://tilecache.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
             maxZoom: 14,
-            attribution: '<a href="http://osm.org/">OpenStreetMap</a> and <a href="http://open.mapquest.com/">MapQuest</a>',
+            attribution: '<a href="http://osm.org/">OpenStreetMap</a>',
             opacity: 0.5
         });
         var nasa = new L.TileLayer(
@@ -632,7 +632,7 @@ formatter: function() {
         heatLayer = new L.TileLayer.HeatCanvas("Heatmap", map, {},
                     { 'step' : 0.2, 'degree' : L.TileLayer.HeatCanvas.QUAD, 'opacity': 0.4});
 
-        var control = new L.Control.Layers(  { "OpenMapQuest": omq, "Mapnik": mapnik , "NASA Blue Marble @ Mapbox" : bluemarble}, { "Heat Map" : heatLayer, "Markers" : markersGroup } );
+        var control = new L.Control.Layers(  { "OSM-FR": omq, "OSM.org (Mapnik)": mapnik , "NASA Blue Marble @ Mapbox" : bluemarble}, { "Heat Map" : heatLayer, "Markers" : markersGroup } );
         map = new L.Map('map', {
             center: new L.LatLng(25, 0),
             zoom:3
