@@ -1,7 +1,6 @@
 #! /bin/bash
 
 SEQ=`wget -o /dev/null -O /dev/stdout http://download.openstreetmap.fr/replication/planet/minute/state.txt|grep sequenceNumber|cut -d '=' -f 2`
-
 MM=$[$SEQ/1000000]
 KK=$[$SEQ-$MM*1000000]
 KK=$[$KK/1000]
